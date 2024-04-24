@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: #001d5c9f;
+    color: aliceblue; 
+}
+
+body, ul, li, p {
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+.header {
+    position: sticky;
+    top: 0;
+    background: #080035;
+    padding: 20px;
+    height: 17vh;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+nav div {
+    flex-grow: 1;
+}
+
+
+
+/*###  BOTÃO MENU  ###*/
+/*###  BOTÃO MENU  ###*/
+/*###  BOTÃO MENU  ###*/
+/*###  BOTÃO MENU  ###*/
+
+.menu-re {
+    display: none;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1225px){
+   
+
+    .menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 21vh;
+        right: 0px;
+        background: #000f1f;
+        height: 0px;
+        transition: 0.5s;
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+
+    }
+    #nav.active #menu{
+        height: 79vh;
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    .menu a {
+        padding: 1rem 0;
+        margin: 5vh;
+        border-bottom: 5px;
+    }
+
+    #btn-menu {
+        display: flex;
+        cursor: pointer;
+        border: none;
+        background: none;
+    }
+    #icon-menu {
+        color: #23e723;
+        border-top: 3px solid;
+        width: 32px;
+    }
+    #icon-menu::after, #icon-menu::before {
+        content: '';
+        display: block;
+        width: 32px;
+        height: 3px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: 0.3s;
+        position: relative;
+    }
+    #nav.active #icon-menu {
+        border-top-color: transparent;
+    }
+    #nav.active #icon-menu::before {
+        transform: rotate(135deg);
+    }
+    #nav.active #icon-menu::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+
+}
+/*###  BOTÃO MENU FIM  ###*/
+/*###  BOTÃO MENU FIM  ###*/
+/*###  BOTÃO MENU FIM  ###*/
+/*###  BOTÃO MENU FIM  ###*/
