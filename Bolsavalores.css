@@ -26,20 +26,34 @@ a {
     position: sticky;
     top: 0;
     background: #080035;
+    display: flex;
     padding: 20px;
-    height: 17vh;
+    height: 13vh;
 }
 
-.nav {
+nav {
     display: flex;
-    justify-content: space-between;
+
+    align-items: center;
     padding: 1.5rem 6rem;
 }
 
-nav div {
-    flex-grow: 1;
+ul {
+    display: flex;
+    align-items: center;
+    margin: 63vh;
 }
 
+ul li {
+    margin: 5px;
+    padding: 1vh;
+}
+
+li:hover {
+    padding: 5px;
+    background: #23e723;
+    border-radius: 4px;
+}
 
 
 /*###  BOTÃO MENU  ###*/
