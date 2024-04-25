@@ -5,4 +5,13 @@ main {
 
 main div{
     margin-bottom: 50vh;
+    padding: 5vh;
+}
+
+h1{
+    margin: 20px;
+}
+
+.cartas-filmes{
+    display: flex;
 }

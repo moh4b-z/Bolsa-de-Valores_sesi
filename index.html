@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Bolsavalores.css"/>
     <link rel="stylesheet" href="Corpo_do_texto.css"/>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <title>Bolsa de Valores</title>
@@ -36,27 +36,44 @@
                 </ul>
             </div>
 
-            <div>Sesi</div>
+            <div><img src="/Img/Logo_SESI_vermelho.jpg" alt="" class="sesi"></div>
         </nav>
     </header>
 
     <main>
         <div id="Sobre">
-            <h1>Sobre</h1>
+            <div>
+                <h1>Sobre</h1>
+            </div>
         </div>
 
         <div id="Fuciona">
-            <h1>Como Fuciona</h1>
+            <div>
+                <h1>Como Fuciona</h1>
+            </div>
+
         </div>
 
         <div id="Filmes">
-            <h1>Filmes</h1>
+            <div>
+                <h1>Filmes</h1>
+                <p></p>
+                <div class="cartas-filmes"></div>
+            </div>
         </div>
 
         <div id="Graficos">
-            <h1>Graficos</h1>
+            <div>
+                <h1>Graficos</h1>
+            </div>
+            <div>
+                <canvas id="Grafico" style="max-width: 100%; height: 80vh;"></canvas>
+            </div>
+            
         </div>
     </main>
+    <script src="/graficos.js"></script>
+    <script src="/submenu.js"></script>
 
 </body>
 </html>
