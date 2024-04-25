@@ -1,9 +1,6 @@
 // Importar o Moment.js
-import moment from 'moment';
-
-// Registrar o adaptador de datas do Moment.js para o Chart.js
-import { Chart } from 'chart.js';
-import 'chartjs-adapter-moment';
+import moment from 'https://cdn.jsdelivr.net/npm/moment/moment.min.js';
+import { Chart } from 'chart.js/auto'; // Alteração aqui
 
 document.addEventListener('DOMContentLoaded', function() {
     const ctx = document.getElementById('Grafico').getContext('2d');
@@ -52,13 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Função para gerar datas para os rótulos do eixo X (simulação)
 function generateLabels(count) {
-    const startDate = moment().subtract(count - 1, 'days');
+    const startDate = moment();
     const labels = [];
     for (let i = 0; i < count; i++) {
-        const date = moment(startDate).add(i, 'days');
+        const date = moment(startDate).subtract(i, 'days');
         labels.push(date.format('YYYY-MM-DD')); // Formata a data (YYYY-MM-DD)
     }
-    return labels;
+    return labels.reverse(); // Inverte a ordem para exibir da data mais antiga para a mais recente
 }
 
 // Função para gerar preços aleatórios para simular o histórico de preços das ações
@@ -68,5 +65,5 @@ function generateStockPrices(count, minPrice, maxPrice) {
         const price = Math.random() * (maxPrice - minPrice) + minPrice;
         prices.push(parseFloat(price.toFixed(2))); // Arredonda para 2 casas decimais
     }
-    return prices;
+    return prices.reverse(); // Inverte a ordem para corresponder às datas
 }

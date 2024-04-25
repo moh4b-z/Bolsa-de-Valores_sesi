@@ -1,12 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Dados de exemplo (preços de ações ao longo do tempo)
+    // Dados de exemplo para candlestick
     const dados = [
-        { data: '2022-01-01', preco: 10 },
-        { data: '2022-01-02', preco: 15 },
-        { data: '2022-01-03', preco: 190 },
-        { data: '2022-01-04', preco: 115 },
-        { data: '2022-01-05', preco: 105 },
-        { data: '2022-01-06', preco: 205 }
+        { data: '2022-01-01', abertura: 100, fechamento: 120, minimo: 95, maximo: 130 },
+        { data: '2022-01-02', abertura: 120, fechamento: 110, minimo: 100, maximo: 125 },
+        { data: '2022-01-03', abertura: 110, fechamento: 115, minimo: 105, maximo: 120 },
         // Adicione mais dados aqui...
     ];
 
@@ -24,27 +21,29 @@ document.addEventListener('DOMContentLoaded', function() {
                   .attr('transform', `translate(${margem.esquerda}, ${margem.topo})`);
 
     // Escalas X e Y
-    const escalaX = d3.scaleTime()
-                      .domain(d3.extent(dados, d => new Date(d.data)))
-                      .range([0, largura]);
+    const escalaX = d3.scaleBand()
+                      .domain(dados.map(d => d.data))
+                      .range([0, largura])
+                      .padding(0.1);
 
     const escalaY = d3.scaleLinear()
-                      .domain([0, d3.max(dados, d => d.preco)])
+                      .domain([d3.min(dados, d => d.minimo), d3.max(dados, d => d.maximo)])
                       .nice()
                       .range([altura, 0]);
 
-    // Linha para os dados
-    const linha = d3.line()
-                    .x(d => escalaX(new Date(d.data)))
-                    .y(d => escalaY(d.preco));
-
-    // Desenhar a linha do gráfico
-    svg.append('path')
-       .datum(dados)
-       .attr('fill', 'none')
-       .attr('stroke', 'steelblue')
-       .attr('stroke-width', 2)
-       .attr('d', linha);
+    // Desenhar os candlesticks
+    svg.selectAll('.candlestick')
+       .data(dados)
+       .enter()
+       .append('rect')
+       .attr('class', 'candlestick')
+       .attr('x', d => escalaX(d.data))
+       .attr('y', d => escalaY(Math.max(d.abertura, d.fechamento)))
+       .attr('width', escalaX.bandwidth())
+       .attr('height', d => Math.abs(escalaY(d.abertura) - escalaY(d.fechamento)))
+       .attr('fill', d => (d.abertura > d.fechamento) ? 'red' : 'green')
+       .attr('stroke', 'black')
+       .attr('stroke-width', 1);
 
     // Eixos X e Y
     svg.append('g')
@@ -60,5 +59,5 @@ document.addEventListener('DOMContentLoaded', function() {
        .attr('y', 0 - (margem.topo / 2))
        .attr('text-anchor', 'middle')
        .style('font-size', '16px')
-       .text('Preço da Ação ao Longo do Tempo');
+       .text('Gráfico de Candlestick');
 });
