@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <title>Gráfico de Candlestick</title>
 </head>
 <body>
     <div id="grafico"></div>
+    <div>
+        <button id="remover"><ion-icon name="trash-outline"></ion-icon></button>
+
+        <div class="Fechamento">
+            <input type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Fechamento">
+            <a href="#" class="botao">
+                <div class="icon"><ion-icon name="add-outline"></ion-icon></div>
+            </a>
+        </div>
+
+        <div class="Maximo">
+            <input type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Maximo">
+            <a href="#" class="botao">
+                <div class="icon"><ion-icon name="arrow-up-sharp"></ion-icon></div>
+            </a>
+        </div>
+
+        <div class="Minimo">
+            <input type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Minimo">
+            <a href="#" class="botao">
+                <div class="icon"><ion-icon name="arrow-down-sharp"></ion-icon></div>
+            </a>
+        </div>
+
+        <button id="adicionar">Adicionar</button>
+
+        <button id="completar"><ion-icon name="stats-chart-sharp"></ion-icon></button>
+    </div>
 
     <script src="candlestick.js"></script>
 </body>
