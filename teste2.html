@@ -6,6 +6,7 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <title>Gráfico de Candlestick</title>
 </head>
 <body>
@@ -14,21 +15,21 @@
         <button id="remover"><ion-icon name="trash-outline"></ion-icon></button>
 
         <div class="Fechamento">
-            <input type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Fechamento">
+            <input id="fec" type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Fechamento">
             <a href="#" class="botao">
                 <div class="icon"><ion-icon name="add-outline"></ion-icon></div>
             </a>
         </div>
 
         <div class="Maximo">
-            <input type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Maximo">
+            <input id="max" class="barra" style=" height: 30px;" placeholder="Colocar o Maximo">
             <a href="#" class="botao">
                 <div class="icon"><ion-icon name="arrow-up-sharp"></ion-icon></div>
             </a>
         </div>
 
         <div class="Minimo">
-            <input type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Minimo">
+            <input id="min" type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Minimo">
             <a href="#" class="botao">
                 <div class="icon"><ion-icon name="arrow-down-sharp"></ion-icon></div>
             </a>
