@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
        { data: '2022-01-02', abertura: 120, fechamento: 110, minimo: 100, maximo: 125 },
        { data: '2022-01-03', abertura: 110, fechamento: 115, minimo: 105, maximo: 120 },
        { data: '2022-01-04', abertura: 115, fechamento: 40, minimo: 110, maximo: 120 },
+       { data: '2022-01-05', abertura: 40, fechamento: 120, minimo: 110, maximo: 120 },
    ];
 
    const largura = window.innerWidth * 0.8; // 80% da largura da janela
@@ -76,34 +77,47 @@ document.addEventListener('DOMContentLoaded', function() {
    }
 
    function adicionarBarra(fechamento, maximo, minimo) {
-       const ultimaBarra = dados[dados.length - 1];
-       const abertura = ultimaBarra.fechamento; // Abertura igual ao fechamento da última barra
+    const ultimaBarra = dados[dados.length - 1];
+    const abertura = ultimaBarra.fechamento; // Abertura igual ao fechamento da última barra
 
-       if (!maximo) {
-           maximo = fechamento;
-       }
+    if (!maximo) {
+        maximo = fechamento;
+    }
 
-       if (!minimo) {
-           minimo = abertura;
-       }
+    if (!minimo) {
+        minimo = abertura;
+    }
 
-       const novaBarra = {
-           data: moment(ultimaBarra.data).add(1, 'days').format('YYYY-MM-DD'),
-           abertura: abertura,
-           fechamento: fechamento,
-           maximo: maximo,
-           minimo: minimo
-       };
+    const novaData = moment(ultimaBarra.data).add(1, 'days').format('YYYY-MM-DD');
+    const novaBarra = {
+        data: novaData,
+        abertura: abertura,
+        fechamento: fechamento,
+        maximo: maximo,
+        minimo: minimo
+    };
 
-       dados.push(novaBarra);
-       desenharGrafico(); // Redesenhar o gráfico após adicionar a nova barra
-   }
+    dados.push(novaBarra);
+
+    // Atualizar a escala X com a nova data adicionada
+    escalaX.domain([...escalaX.domain(), novaData]);
+
+    // Calcular o novo valor máximo para o eixo Y
+    const novoValorMaximo = 1.5 * d3.max(dados, d => d.fechamento);
+
+    // Atualizar a escala Y
+    escalaY.domain([0, novoValorMaximo]).nice();
+
+    desenharGrafico(); // Redesenhar o gráfico após adicionar a nova barra
+    }
+
+
 
    // Manipulador de evento para o botão "Adicionar"
    document.getElementById('adicionar').addEventListener('click', function() {
-       const fechamentoInput = document.querySelector('.Fechamento input');
-       const maximoInput = document.querySelector('.Maximo input');
-       const minimoInput = document.querySelector('.Minimo input');
+       const fechamentoInput = document.querySelector('#fec');
+       const maximoInput = document.querySelector('#max');
+       const minimoInput = document.querySelector('#min');
 
        const fechamento = Number(fechamentoInput.value);
        const maximo = Number(maximoInput.value) || undefined;
@@ -111,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
        if (!fechamento || isNaN(fechamento)) {
            alert('Insira um valor válido para o fechamento.');
+           console.log(fechamento, maximo, minimo)
            return;
        }
 
@@ -121,6 +136,17 @@ document.addEventListener('DOMContentLoaded', function() {
        maximoInput.value = '';
        minimoInput.value = '';
    });
+
+    document.getElementById('remover').addEventListener('click', function() {
+    if (dados.length > 0) {
+        dados.pop(); // Remove o último elemento do array 'dados'
+        desenharGrafico(); // Redesenha o gráfico com os dados atualizados
+    } else {
+        console.log('Não há dados para remover.');
+    }
+    });
+
+
 
    // Desenhar o gráfico inicial
    desenharGrafico();
