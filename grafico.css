@@ -1,5 +1,5 @@
 .Fechamento, .Maximo, .Minimo, .Completar {
-    width: 400px;
+    width: 40px;
     height: 40px;
     background-color: rgb(0, 0, 82);
     overflow: hidden;
@@ -8,6 +8,13 @@
     margin-top: 5px;
     margin-bottom: 5px;
     position: relative;
+    border-radius: 47%;
+    transition: 0.5s;
+}
+
+.Fechamento.ativar, .Maximo.ativar, .Minimo.ativar, .Completar.ativar{
+    width: 100%;
+    border-radius: 6px;
 }
 
 #remover {
@@ -34,11 +41,11 @@
     justify-content: center;
     color: #ff0000;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 .icon_Fechamento:hover, .icon_max:hover, .icon_min:hover, .icon_com:hover, #remover:hover {
     color: #008000;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
 .icon_Fechamento, .icon_max, .icon_min, .icon_com, .icon-fecha ion-icon{
@@ -67,4 +74,19 @@
     height: 100%;
     box-sizing: border-box;
     outline: none;
+}
+
+#adicionar {
+    color: #00ac00;
+    font-size: 16px;
+    background-color: rgb(0, 0, 82);
+    padding: 4px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+#adicionar:hover {
+    transform: scale(1.09);
+    transition: 0.4s;
 }
