@@ -11,7 +11,10 @@ main div{
 h1{
     margin: 20px;
 }
-
-.cartas-filmes{
+.localgrafico {
     display: flex;
+    max-width: 100%;
+}
+.botoesgrafico {
+    align-items: center;
 }

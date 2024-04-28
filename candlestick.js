@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
        { data: '2022-01-05', abertura: 40, fechamento: 120, minimo: 110, maximo: 120 },
    ];
 
-   const largura = window.innerWidth * 0.8; // 80% da largura da janela
+   const largura = window.innerWidth * 0.6; // 60% da largura da janela
    const altura = largura * 0.5; // Metade da largura para a altura
    const margem = { topo: 30, direita: 30, baixo: 30, esquerda: 60 };
 

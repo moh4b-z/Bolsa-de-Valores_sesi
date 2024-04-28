@@ -3,43 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Corpo_do_texto.css"/>
+    <link rel="stylesheet" href="/grafico.css"/>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <title>Gráfico de Candlestick</title>
+    <link rel="icon" href="/Img/logofundobranco.jpeg"/>
+    <title>Investiments</title>
 </head>
 <body>
-    <div id="grafico"></div>
-    <div>
-        <button id="remover"><ion-icon name="trash-outline"></ion-icon></button>
+    <div class="localgrafico">
+        <div id="grafico"></div>
+        <div class="botoesgrafico">
+            <button id="remover" class="icon"><ion-icon name="trash-outline"></ion-icon></button>
+    
+            <div class="Fechamento">
 
-        <div class="Fechamento">
-            <input id="fec" type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Fechamento">
-            <a href="#" class="botao">
-                <div class="icon"><ion-icon name="add-outline"></ion-icon></div>
-            </a>
+                <div class="icon_Fechamento">
+                    <ion-icon name="bar-chart-sharp"></ion-icon>
+                </div>
+
+                <div class="classinput">
+                    <input id="fec" type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Fechamento">
+                </div>
+
+                <div class="icon-fecha">
+                    <ion-icon name="close-sharp"></ion-icon>
+                </div>
+                
+            </div>
+
+            <div class="Maximo">
+
+                <div class="icon_max">
+                    <div class="icon"><ion-icon name="trending-up-sharp"></ion-icon></div>
+                </div>
+
+                <div class="classinput">
+                    <input id="max" type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Maximo">
+                </div>
+
+                <div class="icon-fecha">
+                    <ion-icon name="close-sharp"></ion-icon>
+                </div>
+                
+            </div>
+
+            <div class="Minimo">
+
+                <div class="icon_min">
+                    <div class="icon"><ion-icon name="trending-down-sharp"></ion-icon></div>
+                </div>
+
+                <div class="classinput">
+                    <input id="min" type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Minimo">
+                </div>
+
+                <div class="icon-fecha">
+                    <ion-icon name="close-sharp"></ion-icon>
+                </div>
+                
+            </div>
+
+            <div class="Completar">
+
+                <div class="icon_com">
+                    <div class="icon"><ion-icon name="stats-chart-sharp"></ion-icon></div>
+                </div>
+
+                <div class="classinput">
+                    <input id="qtdBarras" type="number" class="barra" style=" height: 30px;" placeholder="Quantas barras a mais?">
+                </div>
+
+                <div class="icon-fecha">
+                    <ion-icon name="close-sharp"></ion-icon>
+                </div>
+                
+            </div>
+    
+            <button id="adicionar">Adicionar</button>
         </div>
-
-        <div class="Maximo">
-            <input id="max" class="barra" style=" height: 30px;" placeholder="Colocar o Maximo">
-            <a href="#" class="botao">
-                <div class="icon"><ion-icon name="arrow-up-sharp"></ion-icon></div>
-            </a>
-        </div>
-
-        <div class="Minimo">
-            <input id="min" type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Minimo">
-            <a href="#" class="botao">
-                <div class="icon"><ion-icon name="arrow-down-sharp"></ion-icon></div>
-            </a>
-        </div>
-
-        <button id="adicionar">Adicionar</button>
-
-        <button id="completar"><ion-icon name="stats-chart-sharp"></ion-icon></button>
     </div>
 
     <script src="candlestick.js"></script>
+    <script src="/botaografico.js"></script>
 </body>
 </html>
