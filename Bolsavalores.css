@@ -49,6 +49,7 @@ html {
     padding: 10px;
     height: 13vh;
     min-height: 50px;
+    z-index: 1;
 }
 
 nav {

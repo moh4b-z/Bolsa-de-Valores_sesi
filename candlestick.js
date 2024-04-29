@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
    const largura = window.innerWidth * 0.681; // largura da janela
    const altura = largura * 0.5; // Metade da largura para a altura
-   const margem = { topo: 30, direita: 30, baixo: 30, esquerda: 60 };
+   const margem = { topo: 30, direita: 30, baixo: 30, esquerda: 30 };
 
    const svg = d3.select('#grafico')
                  .append('svg')
