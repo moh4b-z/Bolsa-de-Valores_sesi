@@ -1,15 +1,13 @@
-main {
-    margin: 3vh;
-}
-
-
-main div{
-    margin-bottom: 50vh;
+.teste {
     padding: 5vh;
 }
 
 h1{
-    margin: 20px;
+    margin: 15px;
+}
+
+.teste h1{
+    font-size: 30px;
 }
 .localgrafico {
     display: flex;
@@ -17,4 +15,15 @@ h1{
 }
 .botoesgrafico {
     align-items: center;
+}
+
+#Sobre, #Historia, #Filmes {
+    background-color: aliceblue;
+    color: black;
+}
+
+@media (max-width: 735px){
+    .localgrafico {
+        display: block;
+    }
 }

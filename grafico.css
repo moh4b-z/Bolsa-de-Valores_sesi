@@ -44,6 +44,7 @@
     transition: 0.4s;
 }
 .icon_Fechamento:hover, .icon_max:hover, .icon_min:hover, .icon_com:hover, #remover:hover {
+    transform: scale(1.1);
     color: #008000;
     transition: 0.4s;
 }

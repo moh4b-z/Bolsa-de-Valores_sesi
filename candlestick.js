@@ -72,8 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
           .attr('x', largura / 2)
           .attr('y', 0 - (margem.topo / 2))
           .attr('text-anchor', 'middle')
-          .style('font-size', '16px')
-          .text('Gráfico de Candlestick');
+          .style('font-size', '20px')
+          .attr('fill', 'aliceblue')
+          .text('Gráfico editavel');
    }
 
    function adicionarBarra(fechamento, maximo, minimo) {
@@ -145,8 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Não há dados para remover.');
     }
     });
-
-
 
    // Desenhar o gráfico inicial
    desenharGrafico();

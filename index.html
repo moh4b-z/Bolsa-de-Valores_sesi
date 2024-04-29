@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Bolsavalores.css"/>
     <link rel="stylesheet" href="Corpo_do_texto.css"/>
+    <link rel="stylesheet" href="grafico.css"/>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -16,7 +17,11 @@
 
     <header class="header">
         <nav id="nav">
-            <div>Logo</div>
+            <div class="logo">
+                <img src="/Img/azul.png" alt="">
+                <img src="/Img/6.png" alt="">
+                <img src="/Img/i.png" alt="">
+            </div>
 
 
             <button id="btn-menu" class="menu-re">
@@ -38,8 +43,6 @@
                     <li><a href="#Filmes">Filmes</a></li>
 
                     <li><a href="#Propriedades">Propriedades</a></li>
-
-                    <li><a href="/teste2.html">Teste</a></li>
                     
                 </ul>
             </div>
@@ -88,14 +91,91 @@
             <div>
                 <h1>Propriedades</h1>
             </div>
-            <div>
-                <div id="grafico"></div>
+            
+
+            <div class="teste">
+                <h1>Grafico de teste</h1>
+                <div class="localgrafico">
+                    
+                    <div id="grafico"></div>
+                    <div class="botoesgrafico">
+                        <button id="remover" class="icon"><ion-icon name="trash-outline"></ion-icon></button>
+                
+                        <div class="Fechamento">
+
+                            <div class="icon_Fechamento">
+                                <ion-icon name="bar-chart-sharp"></ion-icon>
+                            </div>
+
+                            <div class="classinput">
+                                <input id="fec" type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Fechamento">
+                            </div>
+
+                            <div class="icon-fecha" id="icon-fecha1">
+                                <ion-icon name="close-sharp"></ion-icon>
+                            </div>
+                            
+                        </div>
+
+                        <div class="Maximo">
+
+                            <div class="icon_max">
+                                <div class="icon"><ion-icon name="trending-up-sharp"></ion-icon></div>
+                            </div>
+
+                            <div class="classinput">
+                                <input id="max" type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Maximo">
+                            </div>
+
+                            <div class="icon-fecha" id="icon-fecha2">
+                                <ion-icon name="close-sharp"></ion-icon>
+                            </div>
+                            
+                        </div>
+
+                        <div class="Minimo">
+
+                            <div class="icon_min">
+                                <div class="icon"><ion-icon name="trending-down-sharp"></ion-icon></div>
+                            </div>
+
+                            <div class="classinput">
+                                <input id="min" type="number" class="barra" style=" height: 30px;" placeholder="Colocar o Minimo">
+                            </div>
+
+                            <div class="icon-fecha" id="icon-fecha3">
+                                <ion-icon name="close-sharp"></ion-icon>
+                            </div>
+                            
+                        </div>
+
+                        <div class="Completar">
+
+                            <div class="icon_com">
+                                <div class="icon"><ion-icon name="stats-chart-sharp"></ion-icon></div>
+                            </div>
+
+                            <div class="classinput">
+                                <input id="qtdBarras" type="number" class="barra" style=" height: 30px;" placeholder="Quantas barras a mais?">
+                            </div>
+
+                            <div class="icon-fecha" id="icon-fecha4">
+                                <ion-icon name="close-sharp"></ion-icon>
+                            </div>
+                            
+                        </div>
+                
+                        <button id="adicionar">Adicionar</button>
+                    </div>
+                </div>
             </div>
             
+                    
         </div>
     </main>
     <script src="candlestick.js"></script>
     <script src="/submenu.js"></script>
+    <script src="botaografico.js"></script>
 
 </body>
 </html>

@@ -25,6 +25,17 @@ html {
     scroll-behavior: smooth;
 }
 
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 8vh;
+    min-width: 22px;
+    position: absolute;
+}
+
 .sesi {
     width: 15vh;
 }
@@ -37,6 +48,7 @@ html {
     display: flex;
     padding: 10px;
     height: 13vh;
+    min-height: 50px;
 }
 
 nav {
