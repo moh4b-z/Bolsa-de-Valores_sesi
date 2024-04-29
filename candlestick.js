@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
           .attr('y', 0 - (margem.topo / 2))
           .attr('text-anchor', 'middle')
           .style('font-size', '20px')
-          .attr('fill', 'aliceblue')
+          .attr('fill', '#ffffff')
           .text('Gráfico editavel');
    }
 
