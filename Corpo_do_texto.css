@@ -1,5 +1,13 @@
 .teste {
-    padding: 5vh;
+    padding: 2vh;
+}
+
+#Sobre, #Definicao, #Historia, #BVB, #Filmes {
+    height: 300px;
+}
+
+#Sobre, #Definicao, #Historia, #BVB, #Filmes, #Propriedades {
+    padding: 10vh 1vh;
 }
 
 h1{
