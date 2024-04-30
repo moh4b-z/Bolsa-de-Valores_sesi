@@ -3,7 +3,7 @@
 }
 
 #Sobre, #Definicao, #Historia, #BVB, #Filmes {
-    height: 300px;
+    height: 100%;
 }
 
 #Sobre, #Definicao, #Historia, #BVB, #Filmes, #Propriedades {
@@ -28,6 +28,13 @@ h1{
 #Sobre, #Historia, #Filmes {
     background: #ffffff;
     color: black;
+}
+p {
+    text-align: justify;
+    width: 80%;
+    text-indent: 40px;;
+    font-size: clamp(10px, 13 + 3vw, 0.91em);
+    padding: 5px 20px;
 }
 
 @media (max-width: 735px){

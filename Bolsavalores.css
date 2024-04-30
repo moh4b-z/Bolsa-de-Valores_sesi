@@ -40,7 +40,8 @@ html {
     width: 15vh;
 }
 
-.header {
+header {
+    display: block;
     position: sticky;
     top: 0;
     justify-content: space-around;
@@ -52,7 +53,7 @@ html {
     z-index: 1;
 }
 
-nav {
+#nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,7 +61,15 @@ nav {
     padding: 1.5rem 6rem;
 }
 
-ul {
+.depois {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1.5rem 6rem;
+}
+
+#nav ul {
     display: flex;
     align-items: center;
     width: 100%;
@@ -84,75 +93,9 @@ li:hover {
 /*###  BOTÃO MENU  ###*/
 /*###  BOTÃO MENU  ###*/
 
-.menu-re {
-    display: none;
-    cursor: pointer;
+
+@media (max-width: 750px) {
+    nav ul {
+        display: none;
+    }
 }
-
-
-@media (max-width: 1025px){
-   
-
-    .menu {
-        display: block;
-        position: absolute;
-        width: 100%;
-        top: 13vh;
-        right: 0px;
-        background: #000f1f;
-        height: 0px;
-        transition: 0.5s;
-        z-index: 1000;
-        visibility: hidden;
-        overflow-y: hidden;
-
-    }
-    #nav.active #menu{
-        height: 79vh;
-        visibility: visible;
-        overflow-y: auto;
-    }
-
-    .menu a {
-        padding: 1rem 0;
-        margin: 5vh;
-        border-bottom: 5px;
-    }
-
-    #btn-menu {
-        display: flex;
-        cursor: pointer;
-        border: none;
-        background: none;
-    }
-    #icon-menu {
-        color: #23e723;
-        border-top: 3px solid;
-        width: 32px;
-    }
-    #icon-menu::after, #icon-menu::before {
-        content: '';
-        display: block;
-        width: 32px;
-        height: 3px;
-        background: currentColor;
-        margin-top: 5px;
-        transition: 0.3s;
-        position: relative;
-    }
-    #nav.active #icon-menu {
-        border-top-color: transparent;
-    }
-    #nav.active #icon-menu::before {
-        transform: rotate(135deg);
-    }
-    #nav.active #icon-menu::after {
-        transform: rotate(-135deg);
-        top: -7px;
-    }
-
-}
-/*###  BOTÃO MENU FIM  ###*/
-/*###  BOTÃO MENU FIM  ###*/
-/*###  BOTÃO MENU FIM  ###*/
-/*###  BOTÃO MENU FIM  ###*/
