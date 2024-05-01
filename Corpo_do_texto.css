@@ -33,7 +33,7 @@ p {
     text-align: justify;
     width: 80%;
     text-indent: 40px;;
-    font-size: clamp(10px, 13 + 3vw, 0.91em);
+    font-size: clamp(9px, 10 + 3vw, 0.1em);
     padding: 5px 20px;
 }
 

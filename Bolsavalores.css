@@ -6,7 +6,7 @@
 
 
 body {
-    background: #001d5c9f;
+    background: #080035ee;
     color: aliceblue; 
     overflow: auto;
 }
@@ -95,7 +95,8 @@ li:hover {
 
 
 @media (max-width: 750px) {
-    nav ul {
+    nav ul, .depois, .menu {
         display: none;
+        width: 0;
     }
 }
