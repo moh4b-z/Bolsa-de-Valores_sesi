@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
    let dados = [
-       { data: '2022-01-01', abertura: 100, fechamento: 120, minimo: 95, maximo: 130 },
-       { data: '2022-01-02', abertura: 120, fechamento: 110, minimo: 100, maximo: 125 },
-       { data: '2022-01-03', abertura: 110, fechamento: 115, minimo: 105, maximo: 120 },
-       { data: '2022-01-04', abertura: 115, fechamento: 40, minimo: 110, maximo: 120 },
-       { data: '2022-01-05', abertura: 40, fechamento: 120, minimo: 110, maximo: 120 },
+       { data: '2022-01-01', abertura: 1, fechamento: 1.20, minimo: 0.95, maximo: 1.30 },
+       { data: '2022-01-02', abertura: 1.20, fechamento: 1.10, minimo: 1, maximo: 1.25 },
+       { data: '2022-01-03', abertura: 1.10, fechamento: 1.15, minimo: 1.05, maximo: 1.20 },
+       { data: '2022-01-04', abertura: 1.15, fechamento: 0.40, minimo: 1.10, maximo: 1.20 },
+       { data: '2022-01-05', abertura: 0.40, fechamento: 1.20, minimo: 1.10, maximo: 1.20 },
    ];
 
    const largura = window.innerWidth * 0.681; // largura da janela

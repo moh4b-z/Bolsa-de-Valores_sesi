@@ -28,6 +28,7 @@ html {
 .logo{
     display: flex;
     align-items: center;
+    margin-right: 10px;
 }
 
 .logo img {
@@ -38,6 +39,7 @@ html {
 
 .sesi {
     width: 15vh;
+    margin-left: 10px;
 }
 
 header {
