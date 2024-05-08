@@ -40,6 +40,10 @@ p {
 .sobretxt {
     display: flex;
 }
+
+.sobretxt div p{
+    width: 100%;
+}
 .img1 {
     margin: 5px;
     margin-right: 10px;
