@@ -25,9 +25,39 @@ h1{
     align-items: center;
 }
 
-#Sobre, #Historia, #Filmes {
+
+#Sobre, #Historia2, #Filmes {
     background: #ffffff;
     color: black;
+}
+
+#Historia2, #Historia {
+    display: flex;
+    justify-content: center;
+}
+
+#Historia2 .img {
+    width: 45%;
+    margin: 2%;
+    padding: 5px;
+}
+
+#Historia2 .img h3{
+    font-size: 20px;
+}
+#Historia2 .texto {
+    width: 48%;
+    margin: 2%;
+    padding: 5px;
+}
+
+#Historia2 img {
+    width: 95%;
+    margin: 2.5%;
+}
+.Historia1 {
+    width: 100%;
+    align-items: center;
 }
 p {
     text-align: justify;
