@@ -1,11 +1,50 @@
 document.addEventListener('DOMContentLoaded', function() {
-   let dados = [
-       { data: '2022-01-01', abertura: 100, fechamento: 120, minimo: 95, maximo: 130 },
-       { data: '2022-01-02', abertura: 120, fechamento: 110, minimo: 100, maximo: 125 },
-       { data: '2022-01-03', abertura: 110, fechamento: 115, minimo: 105, maximo: 120 },
-       { data: '2022-01-04', abertura: 115, fechamento: 40, minimo: 110, maximo: 120 },
-       { data: '2022-01-05', abertura: 40, fechamento: 120, minimo: 110, maximo: 120 },
-   ];
+    let dados = [
+        { data: '1929-09-03', abertura: 381.17, fechamento: 381.17, minimo: 377.56, maximo: 381.17 },
+        { data: '1929-09-04', abertura: 380.64, fechamento: 378.64, minimo: 367.90, maximo: 380.64 },
+        { data: '1929-09-05', abertura: 375.85, fechamento: 373.56, minimo: 367.58, maximo: 376.70 },
+        { data: '1929-09-06', abertura: 373.56, fechamento: 370.63, minimo: 366.16, maximo: 373.56 },
+        { data: '1929-09-09', abertura: 370.63, fechamento: 367.91, minimo: 365.64, maximo: 371.47 },
+        { data: '1929-09-10', abertura: 367.91, fechamento: 364.99, minimo: 362.68, maximo: 368.73 },
+        { data: '1929-09-11', abertura: 364.99, fechamento: 361.22, minimo: 358.84, maximo: 365.38 },
+        { data: '1929-09-12', abertura: 361.22, fechamento: 356.85, minimo: 354.18, maximo: 361.22 },
+        { data: '1929-09-13', abertura: 356.85, fechamento: 350.62, minimo: 347.42, maximo: 356.85 },
+        { data: '1929-09-16', abertura: 350.62, fechamento: 343.85, minimo: 341.24, maximo: 350.62 },
+        { data: '1929-09-17', abertura: 343.85, fechamento: 342.13, minimo: 339.30, maximo: 345.89 },
+        { data: '1929-09-18', abertura: 342.13, fechamento: 333.10, minimo: 331.10, maximo: 342.13 },
+        { data: '1929-09-19', abertura: 333.10, fechamento: 327.37, minimo: 321.95, maximo: 333.10 },
+        { data: '1929-09-20', abertura: 327.37, fechamento: 328.01, minimo: 324.50, maximo: 328.01 },
+        { data: '1929-09-23', abertura: 328.01, fechamento: 322.40, minimo: 321.86, maximo: 328.01 },
+        { data: '1929-09-24', abertura: 322.40, fechamento: 327.16, minimo: 320.36, maximo: 327.16 },
+        { data: '1929-09-25', abertura: 327.16, fechamento: 321.23, minimo: 318.82, maximo: 327.16 },
+        { data: '1929-09-26', abertura: 321.23, fechamento: 315.09, minimo: 314.73, maximo: 321.23 },
+        { data: '1929-09-27', abertura: 315.09, fechamento: 303.77, minimo: 302.78, maximo: 315.09 },
+        { data: '1929-09-30', abertura: 303.77, fechamento: 295.70, minimo: 294.07, maximo: 303.77 },
+        { data: '1929-10-01', abertura: 297.88, fechamento: 304.75, minimo: 294.13, maximo: 305.93 },
+        { data: '1929-10-02', abertura: 304.75, fechamento: 310.90, minimo: 301.81, maximo: 312.08 },
+        { data: '1929-10-03', abertura: 310.90, fechamento: 313.94, minimo: 305.63, maximo: 314.57 },
+        { data: '1929-10-04', abertura: 313.94, fechamento: 321.52, minimo: 311.12, maximo: 322.88 },
+        { data: '1929-10-07', abertura: 321.52, fechamento: 326.51, minimo: 317.44, maximo: 327.37 },
+        { data: '1929-10-08', abertura: 326.51, fechamento: 331.77, minimo: 323.62, maximo: 333.70 },
+        { data: '1929-10-09', abertura: 331.77, fechamento: 335.35, minimo: 328.41, maximo: 336.47 },
+        { data: '1929-10-10', abertura: 335.35, fechamento: 340.36, minimo: 332.58, maximo: 341.34 },
+        { data: '1929-10-11', abertura: 340.36, fechamento: 343.75, minimo: 336.19, maximo: 345.33 },
+        { data: '1929-10-14', abertura: 343.75, fechamento: 348.14, minimo: 339.91, maximo: 349.35 },
+        { data: '1929-10-15', abertura: 348.14, fechamento: 351.90, minimo: 344.62, maximo: 353.55 },
+        { data: '1929-10-16', abertura: 351.90, fechamento: 355.83, minimo: 349.23, maximo: 356.38 },
+        { data: '1929-10-17', abertura: 355.83, fechamento: 360.07, minimo: 352.65, maximo: 361.18 },
+        { data: '1929-10-18', abertura: 360.07, fechamento: 363.80, minimo: 357.46, maximo: 364.78 },
+        { data: '1929-10-21', abertura: 363.80, fechamento: 368.52, minimo: 360.92, maximo: 369.65 },
+        { data: '1929-10-22', abertura: 368.52, fechamento: 372.81, minimo: 365.19, maximo: 373.57 },
+        { data: '1929-10-23', abertura: 372.81, fechamento: 377.28, minimo: 369.75, maximo: 378.08 },
+        { data: '1929-10-24', abertura: 377.28, fechamento: 381.99, minimo: 374.15, maximo: 383.00 },
+        { data: '1929-10-25', abertura: 381.99, fechamento: 386.94, minimo: 378.92, maximo: 388.28 },
+        { data: '1929-10-28', abertura: 386.94, fechamento: 391.70, minimo: 383.67, maximo: 392.07 },
+        { data: '1929-10-29', abertura: 391.70, fechamento: 396.82, minimo: 388.23, maximo: 397.37 }
+
+    ];
+    
+    
 
    const largura = window.innerWidth * 0.681; // largura da janela
    const altura = largura * 0.5; // Metade da largura para a altura
